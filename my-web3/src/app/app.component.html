@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">
+        Click Me
+      </button>
+      <br />
+      <br />
+      <ul class="list-gropu">
+        <div *ngIf="onlyOdd">
+          <li
+            class="list-group-item"
+            [ngClass]="{ odd: odd % 2 != 0 }"
+            [ngStyle]="{
+              backgroundColor: odd % 2 != 0 ? 'aqua' : 'transparent'
+            }"
+            *ngFor="let odd of oddNumbers"
+          >
+            {{ odd }}
+          </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li
+            class="list-group-item"
+            [ngClass]="{ even: even % 2 == 0 }"
+            [ngStyle]="{
+              backgroundColor: even % 2 == 0 ? 'orange' : 'transparent'
+            }"
+            *ngFor="let even of evenNumbers"
+          >
+            {{ even }}
+          </li>
+        </div>
+      </ul>
+    </div>
+    <p appBasicHeighlight>Style of basic directive....!</p>
+    <p appBetterHeighlight>Style of better directive....!</p>
+  </div>
+</div>

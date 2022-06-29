@@ -1,0 +1,20 @@
+<label>Server Name</label>
+<input type="text" class="form-control" (input)="twoWay($event)" />
+<p>{{ serverName }}</p>
+<!-- <input type="text" class="form-control" [(ngModel)]="serverName" /> -->
+
+<h4>
+  {{ "Server" }} id {{ serverId }} , status {{ serverStatus }} and name
+  {{ serverName }}
+</h4>
+<button
+  class="btn btn-primary"
+  (click)="buttonPress()"
+  [disabled]="!allowServer"
+>
+  Add Server
+</button>
+<p>{{ allowServer }}</p>
+<p>{{ serverAvailable }}</p>
+<p [innerText]="!allowServer"></p>
+<input type="text" placeholder="Enter Value" />
